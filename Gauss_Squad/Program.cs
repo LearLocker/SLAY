@@ -9,8 +9,8 @@ namespace Gauss_Squad
 {
     class Program
     {
-        public static double eps = 0.000001;
-        public static int sign = 1;
+        public static double eps = 0.000001; // заданная точность вычислений
+        public static int sign = 1; // знак определителя матрицы
 
         /// <summary>
         /// Вывод на экран
@@ -654,15 +654,15 @@ namespace Gauss_Squad
             String path = "input2.txt";
             string[] allStr = File.ReadAllLines(path); // прочитываем из файла все строки
 
-            double[,] a_matrix;          // матрица A
-            double[] solution;           // вектор неизвестных x
+            double[,] a_matrix;        // матрица A
+            double[] solution;         // вектор неизвестных x
             double[] vector;           // вектор результата
-            double[] discrepancy;           // вектор невязки U
+            double[] discrepancy;      // вектор невязки U
             double[,] inverse;         // обратная матрица
             int[] index_root;
-            bool Sovm;
+            bool Sovm;                 // параметр совместной матрицы
             int size;                  // размерность задачи
-            double det;
+            double det;                // определитель
 
             size = Convert.ToInt32(allStr[0]); // в первой строчке размер
             a_matrix = new double[size, size];
